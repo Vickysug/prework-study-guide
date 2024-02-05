@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Study Guide</title>
+</head>
+<body>
+
+  <header>
+    <h2><a href="index.html">Prework Study Guide</a></h2>
+  </header>
+
+  
+<body>
+
+<h3>Git & GitHub</h3>
+<p></p>
+
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="git.html">Git</a></li>
+      <li><a href="bootstrap.html">Bootstrap</a></li>
+    </ul>
+  
+  <div class="dropdown">
+    <button class="dropbtn">GitHub Page Content</button>
+    <div class="dropdown-content">
+      <a href="#start">Where to start</a>
+      <a href="#SSH">SSH Keys</a>
+      <a href="#Push"> Push to repo</a>
+      <a href="#cloning">Cloning</a>
+      <a href="#creating-branches">Creating Branches</a>
+      <a href="#find-branches">Finding Branches</a>
+      <a href="#pushing-branch">Pushing Branches</a>
+      <a href="#pull-request">Pull Requests</a>
+      <a href="#group-project">Group Projects</a>
+      <a href="#deployment">Deployment</a>
+    </div>
+  </div>
+  
+</nav>
+  <article>
+    <h1>GitHub</h1>
+    <p>What is Git?
+      <br>
+      Git is a popular version control system. It was created by Linus Torvalds in 2005, and has been maintained by Junio Hamano since then.
+      <br>
+      It is used for:
+      <br>
+      Tracking code changes
+      <br>
+      Tracking who made changes
+      <br>
+      Coding collaboration</p>
+
+      <br>
+      What does Git do?
+      <br>
+Manage projects with Repositories
+<br>
+Clone a project to work on a local copy
+<br>
+Control and track changes with Staging and Committing
+<br>
+Branch and Merge to allow for work on different parts and versions of a project
+<br>
+Pull the latest version of the project to a local copy
+<br>
+Push local updates to the main project
+
+<br><p><a href="https://www.w3schools.com/git/default.asp?remote=github">W3 Schools</a> has information and tutorials on Git and Github.</p>
+
+<h3 id="start">Where to start:</h3>
+<p>First make a GitHub account.</p>
+<p>Next make a repository by clicking the green button. </p>
+
+<br><img src="images/gh1.png" id="git-image" alt="git hub screenshot"></p>
+
+<p>Give your project a name, check the README and MIT licence then create. </p>
+<img src="images/gh2.png" id="git-image" alt="git hub screenshot"></p>
+<br>
+<h3 id="SSH">Create SSH Keys</h3>
+<p>This allows your local area to communicate with remote area (GitHub). You will need to use your terminal for this. </p>
+<br>
+<p>Commands to use: 
+<br><br>
+ls -al ~/.ssh - to see if ssh keys are already present (keys end in .pub)
+<br><br>
+ssh-keygen -t ed25519 -C "your_email@example.com" - to create new key (follow prompts)
+<br><br>
+eval "$(ssh-agent -s)" 
+<br><br>
+ssh-add - to add private key to the ssh-agent
+<br><br>
+(copy ssh keys to clip board and add to GitHub)
+<br><br>
+ssh -T git@github.com - to see if key is set up correctly type 'yes' to verify
+<br><br>
+ fingerprint matches
+ <br><br>
+ <p>Copy the SSH keys as shown below</p>
+ <br>
+ <img src="images/gh3.png" id="git-image" alt="git hub screenshot"></p>
+<br>
+</p>
+<h3 id="cloning">Cloning</h3>
+<br>
+<p>Next you can clone the new project to your local area (laptop).
+  <br> To do this first ensure you are in the right directory (eg desktop). 
+  <br>To do this use cd .. to go back. 
+  <br>Type cd desktop. <br>
+  Next type git clone and paste (right click) the SSH keys then click enter.</p>
+  <br>
+ <img src="images/gh4.png" id="git-image" alt="gitbash screenshot"></p>
+ <br>
+ <p>From here, open Visul Studio Code (or other code editor) and open the folder you have just cloned.</p>
+ <br>
+ <img src="images/vs1.png" id="git-image" alt="VS code screenshot"></p>
+ <br>
+
+ <h3 id="Push">Push to repo:</h3>
+ <p>After adding new files, such as boilerplate HTML, CSS and Javascript, you can push (or save) all the contents of the folder to GitHub in the repository as follows:</p>
+ <br>
+git status  
+<br>
+git add -A
+<br>
+git commit -m "message" 
+<br>
+git push origin main
+
+<br>
+<p>You can use the above commands in your terminal to save work everytime you make changes.</p>
+<br>
+<br>
+
+<h3 id="creating-branches">Creating Branches:</h3>
+<br>
+<p>When working as a team on a project, we don't want to save changes to the main branch until it has been checked by colleagues.
+  <br>
+  <br>In order to do this we can create branches.
+  <br>To create a branch, first you must be in the main repository in your terminal and must make sure you have the up to date version. 
+  <br>To do this, type the following commands:
+  <br><br>
+git status
+<br><br>
+git checkout -b name-of-new-branch
+<br><br>
+git status (to check the file has been created)
+
+<br><br><br>
+ <img src="images/gh5.png" id="git-image" alt="gitbash screenshot"></p>
+ <br><br><br>
+
+ <h3 id="find-branches">Find a branch already created:</h3>
+
+ <br><br>
+ To find a branch that you or someone else has created - or to see what branches there might be, assuming you are in the uptodate main version, use the following command:
+ <br>
+ <br>
+ git branch -a
+ <br>
+<br>This will list all branches that are part of the main repo.
+<br><br><br>
+ <img src="images/gh6.png" id="git-image" alt="gitbash screenshot"></p>
+ <br><br>
+ You can then select a branch by using the following command:
+ <br>
+ <br>
+ git checkout name of branch
+</p>
+<br><br>
+<h3 id="pushing-branch">Pushing a branch to repo:</h3>
+
+<br><br>
+<P>To push your branch to the repository (or save your work to the GitHub project):
+<br>
+  Use the following comands in your terminal:
+  <br><br>
+  git add .
+  <br><br>
+  git commit -m"message to explain update"
+  <br><br>
+  git push origin main name-of-new-branch
+
+<h3 id="pull-request">Pull Requests:</h3>
+
+<br>
+After pushing your branch, GitHub with create a pull request: 
+<br><br><br>
+ <img src="images/gh7.png" id="git-image" alt="gitbash screenshot"></p>
+ <br><br>
+   
+ <br>
+ <h3 id="group-project">Creating a group project board:</h3>
+ <br>
+ <p>As a team, a repository can be made into a group-project by creating a collaborative environment with ToDo/In progress/Completed tasks. These tasks can be assigned to team members.</p>
+
+ <br><p>To create this, first go to the repository and click on projects at the top of the page.</p>
+
+ <br><br><br>
+ <img src="images/gh8.png" id="git-image" alt="Github screenshot"></p>
+ <br><br>
+<p>Next, name the project and click "New Project.</p>
+ <br><br><br>
+ <img src="images/gh9.png" id="git-image" alt="Github screenshot"></p>
+ <br><br>
+<p>Once in the group project, click the pen edit at the side of the project name. In here you can add group members by email address or GitHub name.</p>
+<br>
+<br><br><br>
+ <img src="images/gh10.png" id="git-image" alt="Github screenshot"></p>
+ <br><br>
+ <br><br><br>
+ <img src="images/gh11.png" id="git-image" alt="Github screenshot"></p>
+ <br><br>
+<p>Select "Manage access and Invite collaborators in the space provided. They will need to accept the invitation via email. </p>
+<br><br>
+<img src="images/gh12.png" id="git-image" alt="Github screenshot"></p>
+ <br><br>
+<p>There is an option to assign levels of access - "Admin" ,  "Write" and "Read". I added everyone as admin for our group.</p>
+
+<h3 id="deployment">Deployment:</h3>
+</article>
+</section>
+
+<footer>
+  <p>Created by Victoria Sugden</p>
+</footer>
+
+</body>
+</html>
+
+  
+
+    
+
+  
+
